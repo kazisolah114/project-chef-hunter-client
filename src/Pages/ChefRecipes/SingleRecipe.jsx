@@ -2,8 +2,10 @@ import { useState } from "react"
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import { FaHeart } from 'react-icons/fa';
+import Rating from "react-rating";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 
 const SingleRecipe = ({ recipe }) => {
@@ -30,7 +32,14 @@ const SingleRecipe = ({ recipe }) => {
                         {/* <p>{description}</p> */}
                         <p className="mt-3"><b className="text-secondary">Cooking method:</b><br /> {cooking_method}</p>
                         <div className='d-flex align-items-center justify-content-between mt-4'>
-                            <p className="mb-0">{rating}</p>
+                                <Rating className='text-warning'
+                                    readonly
+                                    placeholderRating={rating}
+                                    emptySymbol={<FaStarHalfAlt/>}
+                                    placeholderSymbol={<FaStar/>}
+                                    fullSymbol={<FaStar/>}
+                                    
+                                />
                             {disableBtn ?
                                 <button className='btn btn-outline-warning text-dark disabled'><FaHeart className='text-danger me-1' /> Favourite</button>
                                 :

@@ -3,21 +3,22 @@ import Header from '../../Shared/Header/Header';
 // import { Button } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Navigate, useLoaderData, useNavigation } from 'react-router-dom';
-import { FaCheckCircle, FaHamburger, FaHeart } from 'react-icons/fa';
+import { FaCheckCircle, FaHamburger, FaHeart, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import './ChefRecipes.css';
 import Row from 'react-bootstrap/Row';
 import SingleRecipe from './SingleRecipe';
 import NotFound from '../NotFound/NotFound';
+import Rating from 'react-rating';
 
 const ChefRecipes = () => {
 
     const data = useLoaderData()
-    if(data === '') {
+    if (data === '') {
         return <NotFound></NotFound>
     }
     const { id, image, name, bio, years_experience, rating, num_recipes, num_likes, recipes } = data;
 
-    
+
 
     return (
         <div>
@@ -32,17 +33,23 @@ const ChefRecipes = () => {
                         <h4>{name}</h4>
                         <p><span><FaCheckCircle /></span> Experience: {years_experience} years</p>
                         <p className='mb-3'><span><FaHamburger /></span> Recipe: {num_recipes} items</p>
-                        {/* <p className='mb-3'><span><FaHeart /></span> {num_likes} likes</p> */}
                         <b className='text-secondary'>About {name}:</b>
                         <p>{bio}</p>
                         <div className='d-flex align-items-center justify-content-between mt-5'>
-                            <p>Rating: {recipes[0].rating}</p>
+                            {/* <p>Rating: {recipes[0].rating}</p> */}
+                            <Rating className='text-warning'
+                                readonly
+                                placeholderRating={recipes[0].rating}
+                                emptySymbol={<FaStarHalfAlt/>}
+                                placeholderSymbol={<FaStar/>}
+                                fullSymbol={<FaStar/>}
+                            />
                             <p className='mb-3'><span><FaHeart /></span> {num_likes} likes</p>
                         </div>
                     </div>
                 </div>
 
-                
+
 
                 {/* Recipes Section */}
                 <div className="recipes-section py-5">
