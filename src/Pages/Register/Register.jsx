@@ -5,17 +5,20 @@ import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { getAuth, updateProfile } from "firebase/auth";
+
 
 const Register = () => {
+    const auth = getAuth();
     const {createUser} = useContext(AuthContext)
     // console.log(createUser)
     const [success, setSuccess] = useState('')
     const handleCreateUser = event => {
         event.preventDefault();
-        const name = event.target.name.value;
+        const displayName = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        const photo = event.target.photo.value;
+        const photoURL = event.target.photo.value;
         // console.log(name, email, password, photo)
         
         if(password.length < 6) {
@@ -27,6 +30,17 @@ const Register = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
+
+            updateProfile(auth.currentUser, {
+                displayName: displayName, photoURL: photoURL
+              }).then(() => {
+                // Profile updated!
+                // ...
+              }).catch((error) => {
+                // An error occurred
+                // ...
+              });
+
             setSuccess('Registration successfull!')
         })
         .catch(error => {
@@ -80,3 +94,7 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
+

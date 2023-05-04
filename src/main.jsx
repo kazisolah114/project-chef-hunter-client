@@ -15,6 +15,7 @@ import Register from './Pages/Register/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Chef from './Pages/Chef/Chef.jsx';
 import ChefRecipes from './Pages/ChefRecipes/ChefRecipes.jsx';
+import NotFound from './Pages/NotFound/NotFound.jsx';
 
 
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: 'register',
     element: <Register></Register>
+  },
+  {
+    path: '*',
+    element: <NotFound></NotFound>
   }
   
 ])

@@ -6,12 +6,15 @@ import { Outlet } from 'react-router-dom';
 import Banner from '../../Shared/Banner/Banner';
 
 const Main = () => {
+    
     return (
         <div>
+            
             <Header></Header>
             <Banner></Banner>
             <Container>
                 <Outlet></Outlet>
+
                 <Footer></Footer>
             </Container>
         </div>

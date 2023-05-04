@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import Chef from '../Chef/Chef';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import './Home.css'
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
-import { Button } from 'react-bootstrap';
 
 const Home = () => {
-    const [loading, setLoading] = useState(false) 
     const data = useLoaderData();
     const recipe_id = useParams()
     
-    // console.log(id)
+
     return (
         <div>
+
             <div className="chef-sectin py-5 mt-5">
                 <div className="chef-section-header text-center mb-5">
                     <h3>Our Top Chefs</h3>
@@ -23,6 +22,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            
             {/* About us section */}
             <div className="about-section py-5">
                 <div className="about-content d-flex align-items-center gap-5">

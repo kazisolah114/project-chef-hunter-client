@@ -2,22 +2,28 @@
 import Header from '../../Shared/Header/Header';
 // import { Button } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Navigate, useLoaderData, useNavigation } from 'react-router-dom';
 import { FaCheckCircle, FaHamburger, FaHeart } from 'react-icons/fa';
 import './ChefRecipes.css';
 import Row from 'react-bootstrap/Row';
 import SingleRecipe from './SingleRecipe';
+import NotFound from '../NotFound/NotFound';
 
 const ChefRecipes = () => {
 
     const data = useLoaderData()
-    console.log(data)
+    if(data === '') {
+        return <NotFound></NotFound>
+    }
     const { id, image, name, bio, years_experience, rating, num_recipes, num_likes, recipes } = data;
+
+    
 
     return (
         <div>
             <Header></Header>
             <Container>
+
                 <div className="chef-details p-3 mt-5 d-flex align-items-center gap-3">
                     <div className='chef-image chef-details-image p-2'>
                         <img src={image} alt="" />
@@ -35,6 +41,8 @@ const ChefRecipes = () => {
                         </div>
                     </div>
                 </div>
+
+                
 
                 {/* Recipes Section */}
                 <div className="recipes-section py-5">
