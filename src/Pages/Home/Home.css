@@ -1,0 +1,30 @@
+.chef-cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px 20px;
+}
+.menu-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px 40px;
+}
+.menu-item {
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px -10px gray;
+}
+.menu-item img {
+    width: 95%;
+}
+.menu-item h5 {
+    margin-top: 10px;
+}
+.menu-item p {
+    margin: 5px 0;
+}
+.about-section {
+    width: 90%;
+    margin: 0 auto;
+}
+.about-img{}
+.about-img img     {}

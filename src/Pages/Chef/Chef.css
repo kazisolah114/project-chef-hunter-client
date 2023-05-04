@@ -1,0 +1,27 @@
+.chef-content {
+    box-shadow: 2px 2px 11px -8px gray;
+    transition: .4s;
+}
+.chef-content:hover{
+    box-shadow: 2px 2px 15px -8px gray;
+}
+.chef-image{}
+.chef-image img {
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+}
+.chef-info{}
+.chef-info h5 {
+    font-size: 14px;
+}
+.chef-info p {
+    margin-bottom: 5px;
+}
+.chef-info p span {
+    font-size: 16px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+    color: #ff4000;
+}

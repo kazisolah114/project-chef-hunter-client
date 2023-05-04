@@ -1,0 +1,12 @@
+.chef-details {
+    box-shadow: 1px 1px 15px -8px gray;
+}
+.chef-details-image{}
+.chef-details-image img {
+    width: 650px;
+    height: 400px;
+}
+.chef-details-info{}
+.chef-details-info b {
+    font-size: 15px;
+}
