@@ -16,6 +16,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Chef from './Pages/Chef/Chef.jsx';
 import ChefRecipes from './Pages/ChefRecipes/ChefRecipes.jsx';
 import NotFound from './Pages/NotFound/NotFound.jsx';
+import PrivateRoute from './Route/PrivateRoute.jsx';
 
 
 
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path: ":id",
-    element: <ChefRecipes></ChefRecipes>,
+    element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
     loader: ({params}) => fetch(`https://chef-hunter-server-side-kazisolah114.vercel.app/chefs/${params.id}`)
   },
   {

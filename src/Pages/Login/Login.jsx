@@ -6,8 +6,13 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Provider/AuthProvider';
+import { GoogleAuthProvider, getAuth } from 'firebase/auth';
+import app from '../../Firebase/config.firebase';
+
 
 const Login = () => {
+    const auth = getAuth(app)
+    const provider = new GoogleAuthProvider()
     const {signInUser, googleSignIn} = useContext(AuthContext);
     // console.log(googleSignIn)
     // console.log(signInUser)
@@ -34,7 +39,10 @@ const Login = () => {
             setErrorMessage(errorMessage)
 
         })
+        
     }
+
+    // Google Popup not working
     const handleGoogleSignIn = () => {
         googleSignIn(auth, provider)
         .then(res => {
@@ -44,6 +52,7 @@ const Login = () => {
             console.log(err.message)
         })
     }
+    
 
     return (
         <div>

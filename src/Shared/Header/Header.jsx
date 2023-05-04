@@ -27,7 +27,9 @@ const Header = () => {
                         <ActiveLink to="/blog">Blog</ActiveLink>
                         {user ?
                             <div>
-                                <span className='text-white me-2'>Hello {user.email}</span>
+                                <span className='text-white me-2'>
+                                    <img className='profile-picture' src={user.photoURL} alt="" />
+                                </span>
                                 <Button variant="warning" className='rounded-1 px-4 py-1' onClick={handleLogOut}>Logout</Button>
 
                             </div>

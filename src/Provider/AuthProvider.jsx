@@ -4,7 +4,6 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 
     
     const auth = getAuth(app)
-    const provider = new GoogleAuthProvider()
     export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState({})
@@ -27,7 +26,7 @@ const AuthProvider = ({children}) => {
     }
     // Google Sign In
     const googleSignIn = () =>{
-        return signInWithPopup(auth, provider)
+        return signInWithPopup()
     }
     const authInfo = {
         user,
