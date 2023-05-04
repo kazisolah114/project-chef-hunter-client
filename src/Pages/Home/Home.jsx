@@ -44,7 +44,7 @@ const Home = () => {
                 </div>
                 <div className="menu-content">
                     <div className="menu-item text-center">
-                        <img src="../../../asset/food1.jpg" alt="" />
+                        <img src="https://i.ibb.co/XbW97dR/food1.jpg" alt="" />
                         <h5>Persian Kabab Platter</h5>
                         <div className='text-warning'>
                             <span><FaStar/></span>
@@ -60,7 +60,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="menu-item text-center">
-                        <img src="../../../asset/food2.jpg" alt="" />
+                        <img src="https://i.ibb.co/6WSJFjk/food2.jpg" alt="" />
                         <h5>Italian Pizzaroma</h5>
                         <div className='text-warning'>
                             <span><FaStar/></span>
@@ -76,7 +76,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="menu-item text-center">
-                        <img src="../../../asset/food3.jpg" alt="" />
+                        <img src="https://i.ibb.co/bHwjQS3/food3.jpg" alt="" />
                         <h5>Mexican Nachos</h5>
                         <div className='text-warning'>
                             <span><FaStar/></span>
@@ -91,7 +91,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="menu-item text-center">
-                        <img src="../../../asset/food4.jpg" alt="" />
+                        <img src="https://i.ibb.co/rcN2Zy7/food4.jpg" alt="" />
                         <h5>Pizza Napoletana</h5>
                         <div className='text-warning'>
                             <span><FaStar/></span>
@@ -107,7 +107,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="menu-item text-center">
-                        <img src="../../../asset/food5.jpg" alt="" />
+                        <img src="https://i.ibb.co/WtbVJK6/food5.jpg" alt="" />
                         <h5>Tonda Romana</h5>
                         <div className='text-warning'>
                             <span><FaStar/></span>
@@ -121,7 +121,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="menu-item text-center">
-                        <img src="../../../asset/food6.jpg" alt="" />
+                        <img src="https://i.ibb.co/1MDV0v3/food6.jpg" alt="" />
                         <h5>Pakistani Reshmi Kabab</h5>
                         <div className='text-warning'>
                             <span><FaStar/></span>

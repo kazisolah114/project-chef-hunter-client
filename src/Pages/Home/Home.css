@@ -26,5 +26,40 @@
     width: 90%;
     margin: 0 auto;
 }
-.about-img{}
-.about-img img     {}
+
+
+/* Responsive CSS */
+@media screen and (max-width: 688px) {
+    .web-navbar {
+        display: none!important;
+    }
+    .header-banner h2 {
+        font-size: 40px;
+        letter-spacing: 0.2em;
+    }
+    .chef-cards {
+        grid-template-columns: auto;
+    }
+    .chef-image img {
+        width: 150px;
+        height: 170px;
+    }
+    .about-content {
+        display: flex!important;
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-img img {
+        width: 100%;
+    }
+    .menu-content {
+        grid-template-columns: auto;
+    }
+    .chef-details {
+        flex-direction: column;
+    }
+    .chef-details-image img {
+        width: 100%!important;
+        height: 100%!important;
+    }
+}

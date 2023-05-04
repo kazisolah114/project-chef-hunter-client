@@ -38,6 +38,9 @@ const ChefRecipes = () => {
 
                 {/* Recipes Section */}
                 <div className="recipes-section py-5">
+                    <div className="recipes-header text-center mb-3">
+                        <h3>Top Recipes of {name}</h3>
+                    </div>
                     <Row xs={1} md={3} className="g-4">
                         {
                             recipes?.map(recipe => <SingleRecipe recipe={recipe} key={recipe.id} />)

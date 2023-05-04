@@ -7,7 +7,6 @@ const Blog = () => {
     return (
         <div>
             <Header></Header>
-            <Banner></Banner>
             <Container>
                 <h2>This is blog page</h2>
             </Container>
