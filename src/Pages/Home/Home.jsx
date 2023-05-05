@@ -1,28 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Chef from '../Chef/Chef';
 import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import './Home.css'
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 const Home = () => {
-    const data = useLoaderData();
-    const recipe_id = useParams()
-    
 
+
+    const [data, setData] = useState([])
+    const [loader, setLoader] = useState(true)
+
+    useEffect(() => {
+        fetch('https://chef-hunter-server-side-kazisolah114.vercel.app/chefs')
+            .then(res => res.json())
+            .then(data => {
+                setData(data);
+                setLoader(false)
+            })
+    }, [])
     return (
         <div>
 
-            <div className="chef-sectin py-5 mt-5">
-                <div className="chef-section-header text-center mb-5">
-                    <h3>Our Top Chefs</h3>
+            {loader ?
+                <div class="d-flex justify-content-center py-5 my-5">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                 </div>
-                <div className='chef-cards'>
-                    {
-                        data.map(chef => <Chef key={chef.id} chef={chef} recipe_id={recipe_id}></Chef>)
-                    }
+                :
+                <div className="chef-sectin py-5 mt-5">
+                    <div className="chef-section-header text-center mb-5">
+                        <h3>Our Top Chefs</h3>
+                    </div>
+                    <div className='chef-cards'>
+                        {
+                            data.map(chef => <Chef key={chef.id} chef={chef}></Chef>)
+                        }
+                    </div>
                 </div>
-            </div>
-            
+            }
+
             {/* About us section */}
             <div className="about-section py-5">
                 <div className="about-content d-flex align-items-center gap-5">
@@ -47,11 +64,11 @@ const Home = () => {
                         <img src="https://i.ibb.co/XbW97dR/food1.jpg" alt="" />
                         <h5>Persian Kabab Platter</h5>
                         <div className='text-warning'>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStarHalfAlt/></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStarHalfAlt /></span>
                         </div>
                         <p>Super delicious platter that serves 4 person very easily Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                         <div className='d-flex justify-content-between align-items-center mt-4'>
@@ -63,11 +80,11 @@ const Home = () => {
                         <img src="https://i.ibb.co/6WSJFjk/food2.jpg" alt="" />
                         <h5>Italian Pizzaroma</h5>
                         <div className='text-warning'>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStarHalfAlt/></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStarHalfAlt /></span>
                         </div>
                         <p>Super delicious platter that serves 4 person very easily Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</p>
                         <div className='d-flex justify-content-between align-items-center mt-4'>
@@ -79,10 +96,10 @@ const Home = () => {
                         <img src="https://i.ibb.co/bHwjQS3/food3.jpg" alt="" />
                         <h5>Mexican Nachos</h5>
                         <div className='text-warning'>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStarHalfAlt/></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStarHalfAlt /></span>
                         </div>
                         <p>Super delicious platter that serves 4 person very easily Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                         <div className='d-flex justify-content-between align-items-center mt-4'>
@@ -94,11 +111,11 @@ const Home = () => {
                         <img src="https://i.ibb.co/rcN2Zy7/food4.jpg" alt="" />
                         <h5>Pizza Napoletana</h5>
                         <div className='text-warning'>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStarHalfAlt/></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStarHalfAlt /></span>
                         </div>
                         <p>Super delicious platter that serves 4 person very easily Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className='d-flex justify-content-between align-items-center mt-4'>
@@ -110,9 +127,9 @@ const Home = () => {
                         <img src="https://i.ibb.co/WtbVJK6/food5.jpg" alt="" />
                         <h5>Tonda Romana</h5>
                         <div className='text-warning'>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
                         </div>
                         <p>Super delicious platter that serves 4 person very easily Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
                         <div className='d-flex justify-content-between align-items-center mt-4'>
@@ -124,10 +141,10 @@ const Home = () => {
                         <img src="https://i.ibb.co/1MDV0v3/food6.jpg" alt="" />
                         <h5>Pakistani Reshmi Kabab</h5>
                         <div className='text-warning'>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStar/></span>
-                            <span><FaStarHalfAlt/></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStar /></span>
+                            <span><FaStarHalfAlt /></span>
                         </div>
                         <p>Super delicious platter that serves 4 person very easily. Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                         <div className='d-flex justify-content-between align-items-center mt-4'>

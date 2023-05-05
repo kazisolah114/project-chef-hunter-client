@@ -36,7 +36,6 @@ const ChefRecipes = () => {
                         <b className='text-secondary'>About {name}:</b>
                         <p>{bio}</p>
                         <div className='d-flex align-items-center justify-content-between mt-5'>
-                            {/* <p>Rating: {recipes[0].rating}</p> */}
                             <Rating className='text-warning'
                                 readonly
                                 placeholderRating={recipes[0].rating}

@@ -13,6 +13,7 @@ const Register = () => {
     const {createUser} = useContext(AuthContext)
     // console.log(createUser)
     const [success, setSuccess] = useState('')
+    const [error, setError] = useState('')
     const handleCreateUser = event => {
         event.preventDefault();
         const displayName = event.target.name.value;
@@ -22,8 +23,7 @@ const Register = () => {
         // console.log(name, email, password, photo)
         
         if(password.length < 6) {
-            alert("the password must be greater than six characters")
-            return;
+            setError('The password must be greater than six characters')
         }
         setSuccess('')
         createUser(email, password)
@@ -55,7 +55,7 @@ const Register = () => {
                 <div>
                     <Form onSubmit={handleCreateUser} className='mx-auto w-25 border p-4 rounded-1'>
                         <Form.Text className='text-center'>
-                            
+                            <p className='text-danger'>{error}</p>
                         </Form.Text>
                         <Form.Text className='text-center'>
                             <p className='text-success'>{success}</p>

@@ -2,13 +2,14 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import './Chef.css'
 import { FaCheckCircle, FaHamburger, FaHeart } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Chef = ({ chef, recipe_id }) => {
     const { id, image, name, years_experience, num_recipes, num_likes } = chef
     return (
         <div className="chef-content rounded-1 d-flex gap-3 align-items-center">
             <div className='chef-image p-2'>
-                <img src={image} alt="" />
+                <LazyLoadImage src={image} />
             </div>
             <div className="chef-info">
                 <h5>{name}</h5>
