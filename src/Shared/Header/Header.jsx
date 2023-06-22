@@ -7,7 +7,6 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logOutUser } = useContext(AuthContext)
-    // console.log(user)
     const handleLogOut = () => {
         logOutUser()
             .then(res => { })
